@@ -29,18 +29,19 @@
                     <p>Líquido</p>
                 </div>
 
-                <form action>
+                <form>
 
                     <div class="form-group">
-                        <label for="aporte-r">Aporte Inicial</label> <br>
-                        <input type="text" id="aporte-r">
+                        <label for="aporte-r" class="labelClass">Aporte Inicial</label> <br>
+                        <input type="text" id="aporte-r" placeholder="Valor em R$"> <br>
+                        
                     </div>
                     <div class="form-group">
-                        <label for="prazo">Prazo (em meses)</label> <br>
-                        <input type="text" id="prazo-r">
+                        <label for="prazo" class="labelClass">Prazo (em meses)</label> <br>
+                        <input type="text" id="prazo-r" placeholder="Meses de 01 a 12">
                     </div>
                     <div class="form-group">
-                        <label for="ipca">IPCA (ao ano)</label> <br>
+                        <label for="ipca" class="labelClass">IPCA (ao ano)</label> <br>
                         <input type="text" id="ipca">
                     </div>
 
@@ -54,17 +55,19 @@
             <section class="indexacao">
                 <h3> Tipos de indexação </h3>
                 <div class="i-code"> 
-                    <img  alt=""> 
+                    <img  src='assets/img/icons/i unicode.svg't=""> 
                 </div> <br>
 
                 <div class="pre">
+                    <img class="tag-img">
                     <p>PRÉ</p>
                 </div>
                 <div class="pos">
-                    <img src="./assets/img/icons/check-svgrepo-com 1.svg" alt="check">
+                    <img  class="tag-img">
                     <p>PÓS</p>
                 </div>
                 <div class="fixado">
+                    <img class="tag-img">
                     <p>FIXADO</p>
                 </div>
 
@@ -72,16 +75,16 @@
                 <form>
 
                     <div class="form-group">
-                        <label for="aporte-i">Aporte Inicial</label> <br>
-                        <input type="text" id="aporte-i">
+                        <label for="aporte-i" class="labelClass" >Aporte Inicial</label> <br>
+                        <input type="text" id="aporte-i" placeholder="Valor em R$">
                     </div>
                     <div class="form-group">
-                        <label for="rentabilidade">Rentabilidade</label> <br>
-                        <input type="text" id="rentabilidade">
+                        <label for="rentabilidade" class="labelClass"> Rentabilidade</label> <br>
+                        <input type="text" id="rentabilidade" placeholder="Ex.:20%">
                     </div>
 
                     <div class="form-group">
-                        <label for="cdi"> CDI (ao ano)</label> <br>
+                        <label for="cdi" class="labelClass"> CDI (ao ano)</label> <br>
                         <input type="text" id="cdi">
                     </div>
 
@@ -95,14 +98,7 @@
         <button id="limpar">Limpar Campos</button>
         <button id="simular">Simular</button>
 
-
-
-
-
-
     </main>
-
-
 
     <script src='/assets/js/main.js'></script>
 </body>

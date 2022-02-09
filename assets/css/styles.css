@@ -91,16 +91,23 @@ form{
     margin-top: 30px;
 
 }
-
+.form-group{
+    margin-bottom: 30px;
+}
 .form-group input{
     border: none;
     outline: none;
     background-color: #E5E5E5;
     border-bottom: 1px solid black;
     margin-top: 70px;
-    margin-bottom: 30px;
     font-size: 20px
 }
+
+.form-group input::placeholder{
+    font-size: small
+}
+
+
 
 .container-main button{
     margin:92px 0 0 30px; 

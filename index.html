@@ -15,30 +15,32 @@
         <h1>Simulador de Investimentos</h1>
         <h2>Simulador</h2>
 
-        <div class="container-sessoes">
+        <div class="container-sections">
             <section class="rendimento">
                 <h3>Rendimento</h3>
-                <img src="./assets/img/icons/i unicode.svg" alt="">
+                <div class="i-code"> <img src="./assets/img/icons/i unicode.svg" alt=""> </div><br>
+
                 <div class="bruto">
+                    <img src="./assets/img/icons/check-svgrepo-com 1.svg" alt="check">
                     <p>Bruto</p>
                 </div>
                 <div class="liquido">
                     <p>Líquido</p>
                 </div>
 
-                <form action="">
+                <form action>
 
                     <div class="form-group">
-                        <label for="aporte">Aporte Inicial</label> <br>
-                        <input type="text" name="aporte" id="aporte">
+                        <label for="aporte-r">Aporte Inicial</label> <br>
+                        <input type="text" id="aporte-r">
                     </div>
                     <div class="form-group">
-                        <label for="aporte">Prazo (em meses</label> <br>
-                        <input type="text" name="aporte" id="aporte">
+                        <label for="prazo">Prazo (em meses)</label> <br>
+                        <input type="text" id="prazo-r">
                     </div>
                     <div class="form-group">
-                        <label for="aporte">IPCA (ao ano)</label> <br>
-                        <input type="text" name="aporte" id="aporte">
+                        <label for="ipca">IPCA (ao ano)</label> <br>
+                        <input type="text" id="ipca-r">
                     </div>
 
 
@@ -50,12 +52,13 @@
 
             <section class="indexacao">
                 <h3> Tipos de indexação </h3>
-                <img src="./assets/img/icons/i unicode.svg" alt="i-unicode">
+                <div class="i-code"> <img src="./assets/img/icons/i unicode.svg" alt=""> </div> <br>
 
                 <div class="pre">
                     <p>PRÉ</p>
                 </div>
                 <div class="pos">
+                    <img src="./assets/img/icons/check-svgrepo-com 1.svg" alt="check">
                     <p>PÓS</p>
                 </div>
                 <div class="fixado">
@@ -66,18 +69,18 @@
                 <form>
 
                     <div class="form-group">
-                        <label for="aporte">Aporte Inicial</label> <br>
-                        <input type="text" name="aporte" id="aporte">
+                        <label for="aporte-i">Aporte Inicial</label> <br>
+                        <input type="text" id="aporte-i">
                     </div>
                     <div class="form-group">
-                        <label for="aporte">Prazo (em meses</label> <br>
-                        <input type="text" name="aporte" id="aporte">
-                    </div>
-                    <div class="form-group">
-                        <label for="aporte">IPCA (ao ano)</label> <br>
-                        <input type="text" name="aporte" id="aporte">
+                        <label for="rentabilidade">Rentabilidade</label> <br>
+                        <input type="text" id="rentabilidade">
                     </div>
 
+                    <div class="form-group">
+                        <label for="cdi"> CDI (ao ano)</label> <br>
+                        <input type="text" id="cdi">
+                    </div>
 
 
                 </form>

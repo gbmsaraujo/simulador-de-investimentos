@@ -64,11 +64,6 @@
     margin-top:16px;
 }
 
-.bruto{
-    background-color: #ED8E53;
-    color: white;
-    box-shadow: 2px 0 4px black;
-}
 
 .pre, .pos, .fixado{
     position: relative;
@@ -86,11 +81,11 @@
     margin-top:16px;
 }
 
-.pos{
+/* .pos{
     background-color: #ED8E53;
     color: white;
     box-shadow: 2px 0 4px black;
-}
+} */
 
 form{
     margin-top: 30px;

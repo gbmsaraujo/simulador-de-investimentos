@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-main{
+    max-width: 1300px;
+    min-height: 1024px;
+    background-color: #E5E5E5;
+    margin: 0 auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.container-main h1{
+    font-size: 30px;
+    display: inline-block;
+    margin: 42px 0 63px 461px;
+}
+
+.container-main h2{
+    margin-left: 30px;
+    font-size: 24px;
+}
+
+.container-sessoes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.rendimento, .indexacao{
+    margin: 42px 0 0 30px;
+}
+
+.rendimento h3, .indexacao h3{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.bruto, .liquido{
+    position: relative;
+    display: inline-block;
+    width: 103px;
+    height: 50px; 
+    border: 1px solid black;  
+    border-radius: 10px;
+    text-align: center;
+}
+
+.bruto p, .liquido p{
+    display: inline-block;
+    margin-top:16px;
+}
+
+.pre, .pos, .fixado{
+    position: relative;
+    display: inline-block;
+    width: 82px;
+    height: 50px;
+    border: 1px solid black;  
+    border-radius: 10px;
+    text-align: center;
+}
+
+.pre p, .pos p, .fixado p{
+    display: inline-block;
+    margin-top:16px;
+}

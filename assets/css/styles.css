@@ -64,7 +64,7 @@
 
 .button-disabled p, .button-disabled p{
     display: inline-block;
-    margin-top:16px;
+    margin-top:5px;
 }
 
 .button-enabled{
@@ -82,7 +82,7 @@
 
 .button-enabled p, .button-enabled p{
     display: inline-block;
-    margin-top:16px;
+    margin-top:5px;
 }
 .button-enabled  img{
     display: inline-block;

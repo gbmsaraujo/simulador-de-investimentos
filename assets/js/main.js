@@ -89,13 +89,13 @@ aporteIndex.addEventListener("focus", () => {
 
 /*-------------------------------- Validando os Dados-------------------------------*/
 
+const aporteValueRent = Number(aporteRent.value.slice(2).trim().replace(",", "."));
+const aporteValueIndex = Number(aporteIndex.value.slice(2).trim().replace(",", "."));
+const prazoValue = Number(prazo.value);
+const rentabilidadeValue = Number(rentabilidade.value.slice(0,2))
+
 simular.addEventListener("click", () => {
  
-  let aporteValueRent = Number(aporteRent.value.slice(2).trim().replace(",", "."));
-  let aporteValueIndex = Number(aporteIndex.value.slice(2).trim().replace(",", "."));
-  let prazoValue = Number(prazo.value);
-  let rentabilidadeValue = Number(rentabilidade.value.slice(0,2))
-
   if (aporteValueRent === 0 || aporteValueRent === NaN) {
     labelClass[0].style.color = "red";
     msgP[0].setAttribute('class', 'msg-erro')
@@ -134,10 +134,39 @@ simular.addEventListener("click", () => {
 })
  
 
+/*------------Carregando os Dados Por Fetch API (GET)---------*/
 
+  fetch ('http://localhost:3000/indicadores')
+      .then(resposta => resposta.json())
+      .then (json => 
+        cdiRent.value = json[0].valor)
 
+  fetch ('http://localhost:3000/indicadores')
+      .then(resposta => resposta.json())
+      .then (json => 
+        ipca.value = json[1].valor)
+     
+document.addEventListener("click", (event) => {
+  const el = event.target;
+  const filtraBruto = [];
 
+  if (el.id === "bruto") {
+    fetch("http://localhost:3000/simulacoes")
+      .then((resposta) => resposta.json())
+      .then((json) => {
+        const array = json;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i].tipoRendimento === "bruto") {
+            filtraBruto.push(array[i]);
+          }
+        }
 
+        console.log(filtraBruto);
+      });
+  }
 
-
+  if( el.id ==='pre'){
+    
+  }
+});
 

@@ -89,12 +89,13 @@ aporteIndex.addEventListener("focus", () => {
 
 /*-------------------------------- Validando os Dados-------------------------------*/
 
-const aporteValueRent = Number(aporteRent.value.slice(2).trim().replace(",", "."));
-const aporteValueIndex = Number(aporteIndex.value.slice(2).trim().replace(",", "."));
-const prazoValue = Number(prazo.value);
-const rentabilidadeValue = Number(rentabilidade.value.slice(0,2))
 
 simular.addEventListener("click", () => {
+  
+  const aporteValueRent = Number(aporteRent.value.slice(2).trim().replace(",", "."));
+  const aporteValueIndex = Number(aporteIndex.value.slice(2).trim().replace(",", "."));
+  const prazoValue = Number(prazo.value);
+  const rentabilidadeValue = Number(rentabilidade.value.slice(0,2))
  
   if (aporteValueRent === 0 || aporteValueRent === NaN) {
     labelClass[0].style.color = "red";
@@ -132,7 +133,6 @@ simular.addEventListener("click", () => {
 
 
 })
- 
 
 /*------------Carregando os Dados Por Fetch API (GET)---------*/
 

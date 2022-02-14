@@ -20,12 +20,14 @@
                 <h3>Rendimento</h3>
                 <div class="i-code"> <img src="./assets/img/icons/i unicode.svg" alt=""> </div><br>
 
-                <div class="bruto">
-                    <img  class="tag-img">
+               
+                <div class="button-disabled" id="bruto">
+                    <img  class="tag-img" src="./assets/img/icons/check-svgrepo-com 1.svg">
                     <p>Bruto</p>
                 </div>
-                <div class="liquido">
-                    <img  class="tag-img">
+                
+                <div class="button-disabled " id="liquido">
+                    <img  class="tag-img" src="./assets/img/icons/check-svgrepo-com 1.svg">
                     <p>Líquido</p>
                 </div>
 
@@ -33,16 +35,20 @@
 
                     <div class="form-group">
                         <label for="aporte-r" class="labelClass">Aporte Inicial</label> <br>
-                        <input type="text" id="aporte-r" placeholder="Valor em R$"> <br>
-                        
+                        <input type="text" id="aporte-r" placeholder="Valor em R$"> <br> 
+                        <p class="msg-p">Aporte deve ser um número válido</p> 
                     </div>
+
                     <div class="form-group">
                         <label for="prazo" class="labelClass">Prazo (em meses)</label> <br>
                         <input type="text" id="prazo-r" placeholder="Meses de 01 a 12">
+                        <p class="msg-p">Prazo deve ser um mês válido</p> 
                     </div>
+
                     <div class="form-group">
                         <label for="ipca" class="labelClass">IPCA (ao ano)</label> <br>
                         <input type="text" id="ipca">
+                        <p class="msg-p"></p> 
                     </div>
 
 
@@ -55,19 +61,19 @@
             <section class="indexacao">
                 <h3> Tipos de indexação </h3>
                 <div class="i-code"> 
-                    <img  src='assets/img/icons/i unicode.svg't=""> 
+                    <img  src='assets/img/icons/i unicode.svg'> 
                 </div> <br>
 
-                <div class="pre">
-                    <img class="tag-img">
+                <div class="button-disabled" id="pre">
+                    <img src="./assets/img/icons/check-svgrepo-com 1.svg">
                     <p>PRÉ</p>
                 </div>
-                <div class="pos">
-                    <img  class="tag-img">
+                <div class="button-disabled " id="pos">
+                    <img src="./assets/img/icons/check-svgrepo-com 1.svg">
                     <p>PÓS</p>
                 </div>
-                <div class="fixado">
-                    <img class="tag-img">
+                <div class="button-disabled " id="fixado">
+                    <img src="./assets/img/icons/check-svgrepo-com 1.svg">
                     <p>FIXADO</p>
                 </div>
 
@@ -77,10 +83,12 @@
                     <div class="form-group">
                         <label for="aporte-i" class="labelClass" >Aporte Inicial</label> <br>
                         <input type="text" id="aporte-i" placeholder="Valor em R$">
+                        <p class="msg-p">Aporte deve ser um número válido</p> 
                     </div>
                     <div class="form-group">
                         <label for="rentabilidade" class="labelClass"> Rentabilidade</label> <br>
                         <input type="text" id="rentabilidade" placeholder="Ex.:20%">
+                        <p class="msg-p">Rentabilidade deve ser um número válido</p> 
                     </div>
 
                     <div class="form-group">
@@ -95,11 +103,13 @@
         </div>
 
 
-        <button id="limpar">Limpar Campos</button>
-        <button id="simular">Simular</button>
+        <button id="limpar" class="btn-clean-send">Limpar Campos</button>
+        <button id="simular" class="btn-clean-send">Simular</button>
 
+        
     </main>
 
+   
     <script src='/assets/js/main.js'></script>
 </body>
 

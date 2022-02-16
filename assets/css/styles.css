@@ -22,10 +22,20 @@
     margin: 42px 0 63px 461px;
 }
 
-.container-main h2{
+.sub-titulo{
+    display: flex;
+}
+.sub-titulo h2{
+    display: inline-block;
     margin-left: 30px;
     font-size: 24px;
 }
+
+.sub-titulo h3{
+    display: inline-block;
+    margin-left: 520px;
+    font-size: 24px;
+} 
 /* ---------------------------------------- Container Sections----------------------------------*/
 .container-sections{
     display: flex;
@@ -143,4 +153,26 @@ form{
 
 .btn-clean-send:hover{
     background-color: #969696;
+}
+
+#resultado-simulacao{
+    max-width: 660px;
+    margin-left: 18px;
+    
+}
+
+.card-style{
+    display: inline-block;
+    text-align: center;
+    background-color: F4F4F4;
+    box-shadow: 0 0 3px 1px gray;;
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 50px;
+    padding: 5px;
+
+}
+
+.card-style p{
+    margin-top: 30px;
 }

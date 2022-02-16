@@ -15,6 +15,9 @@ const limpar = document.getElementById("limpar");
 const labelClass = document.querySelectorAll(".labelClass");
 const formGroup = document.querySelectorAll(".form-group");
 const msgP = document.querySelectorAll(".msg-p");
+const resultado = document.getElementById('resultado-simulacao')
+const cardResult = document.querySelectorAll('.card-style')
+const paragrafo = document.querySelectorAll('.dados-simulacao')
 
 /*----------------- Codificando a Parte de Rendimento ----------------------*/
 
@@ -99,6 +102,39 @@ aporteIndex.addEventListener("focus", () => {
   aporteIndex.value = "R$ ";
 });
 
+/*-----------------Carregando os Dados Por Fetch API (GET)-------------------------*/
+const dadosAPI = [];
+
+fetch("http://localhost:3000/indicadores")
+  .then((resposta) => resposta.json())
+  .then((json) => (cdiRent.value = json[0].valor));
+
+fetch("http://localhost:3000/indicadores")
+  .then((resposta) => resposta.json())
+  .then((json) => (ipca.value = json[1].valor));
+
+fetch("http://localhost:3000/simulacoes")
+  .then((resposta) => resposta.json())
+  .then((json) => {
+    for (let dados of json) {
+      dadosAPI.push(dados);
+    }
+  });
+
+function geraDados(index, rend) {
+  const dadosIndex = dadosAPI.filter((valor) => {
+    return valor.tipoIndexacao === index;
+  });
+
+  const filtrado = dadosIndex.filter((valor) => {
+    return valor.tipoRendimento === rend;
+  });
+
+  return filtrado;
+}
+
+
+
 /*-------------------------------- Validando os Dados-------------------------------*/
 
 simular.addEventListener("click", () => {
@@ -143,39 +179,23 @@ simular.addEventListener("click", () => {
   } else {
     labelClass[4].style.color = "black";
     msgP[4].setAttribute("class", "msg-p");
+  }
+
+  if (bruto.value==='selected' && pre.value==='selected'){
+    const dadosBrutoPre = geraDados('pre','bruto')
+    console.log (dadosBrutoPre)
+
+    paragrafo[0].innerText = `R$ ${dadosBrutoPre[0].valorFinalBruto}`
+    paragrafo[1].innerText = `${dadosBrutoPre[0].aliquotaIR}%`
+    paragrafo[2].innerText = `R$ ${dadosBrutoPre[0].valorPagoIR}`
+    paragrafo[3].innerText = `R$ ${dadosBrutoPre[0].valorFinalLiquido}`
+    paragrafo[4].innerText = `R$ ${dadosBrutoPre[0].valorTotalInvestido}`
+    paragrafo[5].innerText = `R$ ${dadosBrutoPre[0].ganhoLiquido}`
+
+    paragrafo[3].style.color = 'green'
+    paragrafo[5].style.color = 'green'
 
 
   }
+
 });
-
-/*------------Carregando os Dados Por Fetch API (GET)---------*/
-const dadosAPI = [];
-
-fetch("http://localhost:3000/indicadores")
-  .then((resposta) => resposta.json())
-  .then((json) => (cdiRent.value = json[0].valor));
-
-fetch("http://localhost:3000/indicadores")
-  .then((resposta) => resposta.json())
-  .then((json) => (ipca.value = json[1].valor));
-
-fetch("http://localhost:3000/simulacoes")
-  .then((resposta) => resposta.json())
-  .then((json) => {
-    for (let dados of json) {
-      dadosAPI.push(dados);
-    }
-  });
-
-function geraDados(index, rend) {
-  const dadosIndex = dadosAPI.filter((valor) => {
-    return valor.tipoIndexacao === index;
-  });
-
-  const filtrado = dadosIndex.filter((valor) => {
-    return valor.tipoRendimento === rend;
-  });
-
-  return filtrado;
-}
-

@@ -9,3 +9,7 @@ O Simulador de Investimentos da EQI Investimentos permite ao usuário realizar u
 </ul>
 
 # Como Executar?
+
+Faça um Clone do repositório contendo os arquivos, baixe a API no link https://github.com/eqi-investimentos/desafio-fake-api. 
+
+Com o projeto clonado, abra seu VS Code, instale a extensão live server e abra o index.html pelo server. Execute a fake api conforme informado no link acima e, logo após, realize as simulações. É importante que a API esteja em execução para rodar o projeto.

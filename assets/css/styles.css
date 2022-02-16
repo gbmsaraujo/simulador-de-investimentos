@@ -62,11 +62,6 @@
     display: none;
 }
 
-.button-disabled p, .button-disabled p{
-    display: inline-block;
-    margin-top:5px;
-}
-
 .button-enabled{
     position: relative;
     display: inline-block;
@@ -80,10 +75,7 @@
     color:white;
 }
 
-.button-enabled p, .button-enabled p{
-    display: inline-block;
-    margin-top:5px;
-}
+
 .button-enabled  img{
     display: inline-block;
 }
@@ -99,10 +91,7 @@
     cursor: pointer;
 }
 
-.pre p, .pos p, .fixado p{
-    display: inline-block;
-    margin-top:16px;
-}
+
 
 /* .pos{
     background-color: #ED8E53;

@@ -15,9 +15,8 @@ const limpar = document.getElementById("limpar");
 const labelClass = document.querySelectorAll(".labelClass");
 const formGroup = document.querySelectorAll(".form-group");
 const msgP = document.querySelectorAll(".msg-p");
-const resultado = document.getElementById('resultado-simulacao')
-const cardResult = document.querySelectorAll('.card-style')
-const paragrafo = document.querySelectorAll('.dados-simulacao')
+const resultadoSimulacao = document.getElementById("resultado-simulacao");
+const paragrafo = document.querySelectorAll(".dados-simulacao");
 
 /*----------------- Codificando a Parte de Rendimento ----------------------*/
 
@@ -28,12 +27,11 @@ bruto.addEventListener("click", (event) => {
 
   bruto.removeAttribute("button-disabled");
   bruto.setAttribute("class", "button-enabled");
-  bruto.value = 'selected'
-  liquido.value = ''
+  bruto.value = "selected";
+  liquido.value = "";
 
   liquido.removeAttribute("button-enabled");
   liquido.setAttribute("class", "button-disabled");
-  
 });
 
 liquido.addEventListener("click", (event) => {
@@ -44,8 +42,8 @@ liquido.addEventListener("click", (event) => {
 
   liquido.removeAttribute("button-disabled");
   liquido.setAttribute("class", "button-enabled");
-  bruto.value = ''
-  liquido.value = 'selected'
+  bruto.value = "";
+  liquido.value = "selected";
 });
 
 aporteRent.addEventListener("focus", () => {
@@ -58,43 +56,43 @@ aporteRent.addEventListener("focus", () => {
 pre.addEventListener("click", (event) => {
   pre.removeAttribute("button-disabled");
   pre.setAttribute("class", "button-enabled");
-  pre.value = 'selected'
+  pre.value = "selected";
 
   pos.removeAttribute("button-enabled");
   pos.setAttribute("class", "button-disabled");
-  pos.value = ''
+  pos.value = "";
 
   fixado.removeAttribute("button-enabled");
   fixado.setAttribute("class", "button-disabled");
-  fixado.value = ''
+  fixado.value = "";
 });
 
 pos.addEventListener("click", (event) => {
   pos.removeAttribute("button-disabled");
   pos.setAttribute("class", "button-enabled");
-  pos.value = 'selected'
+  pos.value = "selected";
 
   pre.removeAttribute("button-enabled");
   pre.setAttribute("class", "button-disabled");
-  pre.value = ''
+  pre.value = "";
 
   fixado.removeAttribute("button-enabled");
   fixado.setAttribute("class", "button-disabled");
-  fixado.value = ''
+  fixado.value = "";
 });
 
 fixado.addEventListener("click", (event) => {
   fixado.removeAttribute("button-disabled");
   fixado.setAttribute("class", "button-enabled");
-  fixado.value = 'selected'
+  fixado.value = "selected";
 
   pre.removeAttribute("button-enabled");
   pre.setAttribute("class", "button-disabled");
-  pre.value = ''
+  pre.value = "";
 
   pos.removeAttribute("button-enabled");
   pos.setAttribute("class", "button-disabled");
-  pos.value = ''
+  pos.value = "";
 });
 
 aporteIndex.addEventListener("focus", () => {
@@ -132,8 +130,6 @@ function geraDados(index, rend) {
 
   return filtrado;
 }
-
-
 
 /*-------------------------------- Validando os Dados-------------------------------*/
 
@@ -180,22 +176,115 @@ simular.addEventListener("click", () => {
     labelClass[4].style.color = "black";
     msgP[4].setAttribute("class", "msg-p");
   }
+  /*----------------------- Verificando Rentabilidade e Indexação-------------------------*/
 
-  if (bruto.value==='selected' && pre.value==='selected'){
-    const dadosBrutoPre = geraDados('pre','bruto')
-    console.log (dadosBrutoPre)
+  if (bruto.value === "selected" && pre.value === "selected") {
+    const dadosBrutoPre = geraDados("pre", "bruto");
+    console.log(dadosBrutoPre);
 
-    paragrafo[0].innerText = `R$ ${dadosBrutoPre[0].valorFinalBruto}`
-    paragrafo[1].innerText = `${dadosBrutoPre[0].aliquotaIR}%`
-    paragrafo[2].innerText = `R$ ${dadosBrutoPre[0].valorPagoIR}`
-    paragrafo[3].innerText = `R$ ${dadosBrutoPre[0].valorFinalLiquido}`
-    paragrafo[4].innerText = `R$ ${dadosBrutoPre[0].valorTotalInvestido}`
-    paragrafo[5].innerText = `R$ ${dadosBrutoPre[0].ganhoLiquido}`
+    paragrafo[0].innerText = `R$ ${dadosBrutoPre[0].valorFinalBruto}`;
+    paragrafo[1].innerText = `${dadosBrutoPre[0].aliquotaIR}%`;
+    paragrafo[2].innerText = `R$ ${dadosBrutoPre[0].valorPagoIR}`;
+    paragrafo[3].innerText = `R$ ${dadosBrutoPre[0].valorFinalLiquido}`;
+    paragrafo[4].innerText = `R$ ${dadosBrutoPre[0].valorTotalInvestido}`;
+    paragrafo[5].innerText = `R$ ${dadosBrutoPre[0].ganhoLiquido}`;
 
-    paragrafo[3].style.color = 'green'
-    paragrafo[5].style.color = 'green'
+    paragrafo[3].style.color = "green";
+    paragrafo[5].style.color = "green";
+    resultadoSimulacao.style.display = "block";
+  } else if (bruto.value === "selected" && pos.value === "selected") {
+    const dadosBrutoPre = geraDados("pos", "bruto");
+    console.log(dadosBrutoPre);
 
+    paragrafo[0].innerText = `R$ ${dadosBrutoPre[0].valorFinalBruto}`;
+    paragrafo[1].innerText = `${dadosBrutoPre[0].aliquotaIR}%`;
+    paragrafo[2].innerText = `R$ ${dadosBrutoPre[0].valorPagoIR}`;
+    paragrafo[3].innerText = `R$ ${dadosBrutoPre[0].valorFinalLiquido}`;
+    paragrafo[4].innerText = `R$ ${dadosBrutoPre[0].valorTotalInvestido}`;
+    paragrafo[5].innerText = `R$ ${dadosBrutoPre[0].ganhoLiquido}`;
 
+    paragrafo[3].style.color = "green";
+    paragrafo[5].style.color = "green";
+    resultadoSimulacao.style.display = "block";
+  } else if (bruto.value === "selected" && fixado.value === "selected") {
+    const dadosBrutoPre = geraDados("ipca", "bruto");
+    console.log(dadosBrutoPre);
+
+    paragrafo[0].innerText = `R$ ${dadosBrutoPre[0].valorFinalBruto}`;
+    paragrafo[1].innerText = `${dadosBrutoPre[0].aliquotaIR}%`;
+    paragrafo[2].innerText = `R$ ${dadosBrutoPre[0].valorPagoIR}`;
+    paragrafo[3].innerText = `R$ ${dadosBrutoPre[0].valorFinalLiquido}`;
+    paragrafo[4].innerText = `R$ ${dadosBrutoPre[0].valorTotalInvestido}`;
+    paragrafo[5].innerText = `R$ ${dadosBrutoPre[0].ganhoLiquido}`;
+
+    paragrafo[3].style.color = "green";
+    paragrafo[5].style.color = "green";
+    resultadoSimulacao.style.display = "block";
+  } else if (liquido.value === "selected" && pre.value === "selected") {
+    const dadosBrutoPre = geraDados("pre", "liquido");
+    console.log(dadosBrutoPre);
+
+    paragrafo[0].innerText = `R$ ${dadosBrutoPre[0].valorFinalBruto}`;
+    paragrafo[1].innerText = `${dadosBrutoPre[0].aliquotaIR}%`;
+    paragrafo[2].innerText = `R$ ${dadosBrutoPre[0].valorPagoIR}`;
+    paragrafo[3].innerText = `R$ ${dadosBrutoPre[0].valorFinalLiquido}`;
+    paragrafo[4].innerText = `R$ ${dadosBrutoPre[0].valorTotalInvestido}`;
+    paragrafo[5].innerText = `R$ ${dadosBrutoPre[0].ganhoLiquido}`;
+
+    paragrafo[3].style.color = "green";
+    paragrafo[5].style.color = "green";
+    resultadoSimulacao.style.display = "block";
+  } else if (liquido.value === "selected" && pos.value === "selected") {
+    const dadosBrutoPre = geraDados("pos", "liquido");
+    console.log(dadosBrutoPre);
+
+    paragrafo[0].innerText = `R$ ${dadosBrutoPre[0].valorFinalBruto}`;
+    paragrafo[1].innerText = `${dadosBrutoPre[0].aliquotaIR}%`;
+    paragrafo[2].innerText = `R$ ${dadosBrutoPre[0].valorPagoIR}`;
+    paragrafo[3].innerText = `R$ ${dadosBrutoPre[0].valorFinalLiquido}`;
+    paragrafo[4].innerText = `R$ ${dadosBrutoPre[0].valorTotalInvestido}`;
+    paragrafo[5].innerText = `R$ ${dadosBrutoPre[0].ganhoLiquido}`;
+
+    paragrafo[3].style.color = "green";
+    paragrafo[5].style.color = "green";
+    resultadoSimulacao.style.display = "block";
+  } else if (liquido.value === "selected" && fixado.value === "selected") {
+    const dadosBrutoPre = geraDados("ipca", "liquido");
+    console.log(dadosBrutoPre);
+
+    paragrafo[0].innerText = `R$ ${dadosBrutoPre[0].valorFinalBruto}`;
+    paragrafo[1].innerText = `${dadosBrutoPre[0].aliquotaIR}%`;
+    paragrafo[2].innerText = `R$ ${dadosBrutoPre[0].valorPagoIR}`;
+    paragrafo[3].innerText = `R$ ${dadosBrutoPre[0].valorFinalLiquido}`;
+    paragrafo[4].innerText = `R$ ${dadosBrutoPre[0].valorTotalInvestido}`;
+    paragrafo[5].innerText = `R$ ${dadosBrutoPre[0].ganhoLiquido}`;
+
+    paragrafo[3].style.color = "green";
+    paragrafo[5].style.color = "green";
+    resultadoSimulacao.style.display = "block";
+  } else {
+    alert("Escolha Opções Válidas de Rentabilidade e Indexação");
   }
-
 });
+
+ /*----------------------- Limpar Campos-------------------------*/
+
+ limpar.addEventListener('click',()=>{
+  resultadoSimulacao.style.display = "none"
+  bruto.removeAttribute("button-enabled");
+  bruto.setAttribute("class", "button-disabled");
+  liquido.removeAttribute("button-enabled");
+  liquido.setAttribute("class", "button-disabled");
+  pre.removeAttribute("button-enabled");
+  pre.setAttribute("class", "button-disabled");
+  pos.removeAttribute("button-enabled");
+  pos.setAttribute("class", "button-disabled");
+  fixado.removeAttribute("button-enabled");
+  fixado.setAttribute("class", "button-disabled");
+  aporteRent.value=''
+  aporteIndex.value=''
+  rentabilidade.value=''
+  prazo.value=''
+
+})
+
